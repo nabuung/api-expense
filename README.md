@@ -1,6 +1,5 @@
-# API template with hapi.js
-This is template for API using hapi.js
+# API endpoint for Expense Management
+This is API Endpoint for Expense Management
 
-Included in this template:
-1. API Validation and documentation with joi
-2. API testing with lab and code
+# Available Operation
+1. Create Expense: POST /expense

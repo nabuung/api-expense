@@ -25,3 +25,29 @@ describe('GET /', () => {
         expect(res.statusCode).to.equal(200);
     });
 });
+
+describe('Create new expenses', () => {
+    let server;
+
+    beforeEach(async () => {
+        server = await init();
+    });
+
+    afterEach(async () => {
+        await server.stop();
+    });
+
+    it('with only mandatory payload', async () => {
+        const res = await server.inject({
+            method: 'post',
+            url: '/expense',
+            payload: {
+                title: 'Test Expense',
+                amount: 1000000,
+                category: 'Dining Out',
+                date: '2023-06-10'
+              }
+        });
+        expect(res.statusCode).to.equal(200);
+    });
+});
