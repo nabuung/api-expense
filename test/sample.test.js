@@ -6,16 +6,10 @@ const lab = Lab.script()
 const { afterEach, beforeEach, describe, it } = lab;
 export { lab }
 
+let server;
+server = await init();
+
 describe('GET /', () => {
-    let server;
-
-    beforeEach(async () => {
-        server = await init();
-    });
-
-    afterEach(async () => {
-        await server.stop();
-    });
 
     it('responds with 200', async () => {
         const res = await server.inject({
@@ -27,16 +21,7 @@ describe('GET /', () => {
 });
 
 describe('Create new expenses', () => {
-    let server;
-
-    beforeEach(async () => {
-        server = await init();
-    });
-
-    afterEach(async () => {
-        await server.stop();
-    });
-
+    
     it('with only mandatory payload', async () => {
         const res = await server.inject({
             method: 'post',
