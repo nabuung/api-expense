@@ -4,7 +4,10 @@ This is API Endpoint for Expense Management
 # Available Operation
 1. Create Expense: POST /expense
 
-# Knex configuration
+# Configuration
+Set the environment variable ```DATABASE_URL``` to connection string from cockroach DB. Sample value: ```postgresql://root@127.0.0.1:26257/movr?sslmode=disable```
+
+# Knex Configuration for Development Use
 Knex is used to create database table using knex migration. It is not used during normal API operation.
 
 To use knex, create file ```knexfile.js```, with the following content:
