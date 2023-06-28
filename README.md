@@ -14,7 +14,9 @@ export const development = {
     connection: <connection string>
   }
 ```
-The value of ```<connection string>``` should be taken from output of cockroach DB. Sample value is ```postgresql://root@127.0.0.1:26257/movr?sslmode=disable```. Run cockroachdb with the following command:
+The value of ```<connection string>``` should be taken from output of cockroach DB. Sample value is ```postgresql://root@127.0.0.1:26257/movr?sslmode=disable```. 
+
+Run cockroachdb with the following command:
 
 ```
 cockroach demo --insecure
